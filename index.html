@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RocketLab — Advanced Rocket Engineering Platform</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- BOOT -->
+<div id="boot">
+  <div class="boot-wrap">
+    <canvas id="boot-canvas"></canvas>
+    <div class="boot-content">
+      <div class="boot-logo">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <polygon points="40,4 52,30 76,30 56,46 64,70 40,56 16,70 24,46 4,30 28,30" fill="none" stroke="#e05c1a" stroke-width="1.5"/>
+          <path d="M40 12 L48 32 L40 28 L32 32 Z" fill="#e05c1a" opacity="0.8"/>
+          <circle cx="40" cy="40" r="5" fill="#e05c1a"/>
+          <line x1="40" y1="45" x2="40" y2="65" stroke="#e05c1a" stroke-width="1.5" stroke-dasharray="3,3"/>
+        </svg>
+      </div>
+      <div class="boot-name">ROCKET<span>LAB</span></div>
+      <div class="boot-tagline">Advanced Aerospace Engineering Platform</div>
+      <div class="boot-bar-outer"><div class="boot-bar-inner" id="boot-bar"></div></div>
+      <div class="boot-status" id="boot-status">Initializing guidance systems...</div>
+      <div class="boot-credit">Created by Viren Singh · 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="hidden">
+  <nav id="sidebar">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 80 80">
+        <polygon points="40,4 52,30 76,30 56,46 64,70 40,56 16,70 24,46 4,30 28,30" fill="none" stroke="#e05c1a" stroke-width="2"/>
+        <path d="M40 12 L46 28 L40 24 L34 28 Z" fill="#e05c1a"/>
+        <circle cx="40" cy="40" r="4" fill="#e05c1a"/>
+      </svg>
+      <span>ROCKET<em>LAB</em></span>
+    </div>
+
+    <div class="nav-label">DESIGN</div>
+    <ul class="nav-list">
+      <li class="nav-item active" data-page="dashboard"><i>◈</i>Mission Control</li>
+      <li class="nav-item" data-page="architecture"><i>△</i>Rocket Architecture</li>
+      <li class="nav-item" data-page="propulsion"><i>◉</i>Propulsion Systems</li>
+      <li class="nav-item" data-page="structures"><i>⬡</i>Structural Analysis</li>
+      <li class="nav-item" data-page="aerodynamics"><i>◬</i>Aerodynamics</li>
+    </ul>
+
+    <div class="nav-label">SIMULATION</div>
+    <ul class="nav-list">
+      <li class="nav-item" data-page="trajectory"><i>⊕</i>Trajectory Sim</li>
+      <li class="nav-item" data-page="mission-planner"><i>⬟</i>Mission Planner</li>
+      <li class="nav-item" data-page="launch-sim"><i>▶</i>Launch Simulator</li>
+      <li class="nav-item" data-page="stress-analysis"><i>◎</i>Stress & Failure</li>
+    </ul>
+
+    <div class="nav-label">DESTINATIONS</div>
+    <ul class="nav-list">
+      <li class="nav-item" data-page="solar-system"><i>✦</i>Solar System Map</li>
+      <li class="nav-item" data-page="delta-v"><i>⊞</i>Delta-V Budget</li>
+      <li class="nav-item" data-page="reentry"><i>◌</i>Re-entry Physics</li>
+    </ul>
+
+    <div class="nav-label">RESEARCH</div>
+    <ul class="nav-list">
+      <li class="nav-item" data-page="engines-db"><i>⬢</i>Engine Database</li>
+      <li class="nav-item" data-page="materials"><i>◈</i>Materials Lab</li>
+      <li class="nav-item" data-page="about"><i>◌</i>About</li>
+    </ul>
+
+    <div class="sidebar-foot">
+      <div class="s-dot active"></div>
+      <span>Systems Nominal</span>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header id="topbar">
+      <button id="menu-tog">☰</button>
+      <div class="tb-left">
+        <span id="bc">Mission Control</span>
+      </div>
+      <div class="tb-right">
+        <div class="tb-chip">ALT <b id="alt-val">0</b> km</div>
+        <div class="tb-chip">VEL <b id="vel-val">0</b> m/s</div>
+        <div class="tb-chip orange">G <b id="g-val">1.0</b></div>
+        <div class="tb-chip green">STATUS <b id="status-val">READY</b></div>
+        <div class="av">VS</div>
+      </div>
+    </header>
+    <div id="page-root"></div>
+  </main>
+</div>
+
+<div id="toast-wrap"></div>
+<script src="js/physics.js"></script>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
